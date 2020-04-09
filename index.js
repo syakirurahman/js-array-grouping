@@ -76,4 +76,27 @@ for(let i = 0; i < groupedNames.length; i++) {
   console.log(groupedNames);
   console.log(newObject);
 
+  // Pair programming abdul
+  const sofcoDefined = [{
+    kodeField: 'BCA',
+    isiData: '000',
+    keyLain: 'xxx'
+  }];
+
+  const otherObject = [
+    {
+      kodeField: 'BCA',
+      isiData: '025'
+    }
+  ]
+
+  sofcoDefined.map((sd) => {
+    otherObject.forEach(item => {
+      if(sd.kodeField===item.kodeField) {
+        sd.isiData = item.isiData
+      }
+    });
+    return sd;
+  })
+
   appDiv.innerHTML += `<h2>Grouped by Plain JS</h2><pre>`+JSON.stringify(newObject,null,2)+`</pre>`;
